@@ -1,0 +1,160 @@
+{% extends 'app/base.html' %} {% load static %} {% block title %}
+ Home
+{%endblock title %} 
+{% block banner_slider %}
+<div
+  id="carouselExampleControls"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="{% static 'app/images/banner/b1.jpg' %}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static 'app/images/banner/b2.jpg' %}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static 'app/images/banner/b3.jpg' %}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static 'app/images/banner/b4.jpg' %}"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+{% endblock banner_slider %} 
+{% block livesale %}
+<div class="container">
+
+    <div class="row text-center text-white bg-info border-bottom-shadow p-5">
+      <h2>SALE!!!</h2>
+    </div>
+  </div>
+  {% endblock livesale %} 
+  {% block main-content %}
+<!-- 1st Product Slider -->
+<div class="m-3">
+ <h2>Bottom Wear</h2>
+ <!-- Slider 1 -->
+ <div class="owl-carousel" id="slider1">
+   {% for b in bottomwears %}     
+   <a href= "{% url 'product-details' b.id %}" class="btn"><div class="item"><img src="{{b.product_image.url}}" alt="" height="200px">
+     <span class="fw-bold">{{b.title}}</span><br>
+     <span class="fs-5">Rs. {{b.discounted_price}}</span><br>
+     <span class="fs-6 text-danger"><small>Rs. <del>{{b.selling_price}}</del></small></span><br>
+
+   </div></a>
+   {% endfor %}
+
+ </div>
+</div>
+<!-- End 1st Product Slider -->
+
+<!-- Payment Info Section -->
+<div class="container my-5 height=1px" >
+ <div class="row">
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+     <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+ </div>
+</div>
+<!-- End Payment Info Section -->
+
+<!-- 2nd Product Slider -->
+<div class="m-3">
+ <h2>Bottom Wear</h2>
+ <!-- Slider 1 -->
+ <div class="owl-carousel" id="slider1">
+   {% for m in mobiles %}     
+   <a href= "{% url 'product-details' m.id %}" class="btn"><div class="item"><img src="{{m.product_image.url}}" alt="" height="200px">
+     <span class="fw-bold">{{m.title}}</span><br>
+     <span class="fs-5">Rs. {{m.discounted_price}}</span><br>
+     <span class="fs-6 text-danger"><small>Rs. <del>{{m.selling_price}}</del></small></span><br>
+
+   </div></a>
+   {% endfor %}
+
+ </div>
+</div>
+<!-- End 2nd Product Slider -->
+
+
+<div class="container-fluid bg-secondary">
+  <div class="row p-3">
+    <div class="col-sm-2 text-light text-start">ABOUT
+    <div><a href="" class="text-light">Contact Us</a></div>
+    <div><a href="" class="text-light">About Us</a></div>
+    <div><a href="" class="text-light">Careers</a></div>
+    <div><a href="" class="text-light">MyShop Stories</a></div>
+    <div><a href="" class="text-light">Press</a></div>
+    <div><a href="" class="text-light">MyShop Wholesale</a></div>
+  </div>
+    <div class="col-sm-2 text-light text-center">HELP</div>
+    <div class="col-sm-2 text-light text-center">POLICY</div>
+    <div class="col-sm-2 text-light text-center">SOCIAL</div>
+    <div class="col-sm-2 text-light text-center">Mail Us:</div>
+    <div class="col-sm-2 text-light text-center">Registered Office Address:</div>
+  </div>
+</div>
+
+{% endblock main-content %}
+</div>
