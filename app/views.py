@@ -71,4 +71,37 @@ class CustomerLoginView(View):
                 login(request,user)
                 return HttpResponseRedirect('/')
         return render(request,'app/customerlogin.html',{'form':form})
+    
+    
+    
+    
+def add_to_cart(request):
+ return render(request, 'app/addtocart.html')
+
+def buy_now(request):
+ return render(request, 'app/buynow.html')
+
+def profile1(request):
+ return render(request, 'app/profile.html')
+
+def address(request):
+ return render(request, 'app/address.html')
+
+def orders(request):
+ return render(request, 'app/orders.html')
+
+def change_password1(request):
+ return render(request, 'app/changepassword.html')
+
+def mobile1(request):
+ return render(request, 'app/mobile.html')
+
+def login1(request):
+ return render(request, 'app/login.html')
+
+def customerregistration1(request):
+ return render(request, 'app/customerregistration.html')
+
+def checkout1(request):
+ return render(request, 'app/checkout.html')
         
